@@ -4,7 +4,7 @@
 		module="petrepo$sources_2.12"
 		revision="1.0"
 		status="integration"
-		publication="20180205141413"
+		publication="20180206102902"
 	/>
 	<configurations>
 		<conf name="compile" visibility="public" description=""/>
