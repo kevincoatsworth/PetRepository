@@ -1,6 +1,6 @@
 package petRepo
 
-object PetRepo {
+object PetRepo extends App {
 
 
 
