@@ -8,22 +8,22 @@ import scala.collection.mutable.ArrayBuffer
   */
 class PetRepository extends Pet {
 
-  val Pets = new ArrayBuffer[Pet]
+  private val Pets : ArrayBuffer[Pet] = new ArrayBuffer[Pet]()
 
-  def all() : List[Pet] = Nil
+  def all() : List[Pet] = Pets.toList
 
   def findByName(name: String) : Option[Pet] = None
 
-  def dogs() : List[Pet] = Nil
+  def dogs() : List[Pet] = Pets.toList
 
-  def cats() : List[Pet] = Nil
+  def cats() : List[Pet] = Pets.toList
 
-  def other() : List[Pet] = Nil
+  def other() : List[Pet] = Pets.toList
 
-  def add(pet : Pet*) : List[Pet] = ???
+  def add(pet : Pet*) : List[Pet] = Pets.toList
 
-  def removeByName(name : String) : List[Pet] = ???
+  def removeByName(name : String) : List[Pet] = Pets.toList
 
-  def update(pet: Pet) : List[Pet] = ???
+  def update(pet: Pet) : List[Pet] = Pets.toList
 
 }
