@@ -1,10 +1,8 @@
 package petRepo.models
 
-/**
-  * Created by digital032676 on 05/02/18.
-  */
-trait Pet {
+sealed trait Pet {
   val name: String
+  val age: Int
 }
 
 trait Talking {
@@ -19,14 +17,24 @@ trait Meow extends Talking {
   override def talk: String = "meow"
 }
 
-final case class Dog(override val name: String) extends Pet with Woof {
+trait Squeak extends Talking {
+  override def talk: String = "squeak"
+}
 
-  override def toString = s"The Dogs name is $name and goes $talk"
+final case class Dog(override val name: String, override val age : Int) extends Pet with Woof {
+
+  override def toString = s"The Dogs name is $name. $name is $age years old and goes $talk"
 
 }
 
-final case class Cat (override val name : String) extends Pet with Meow {
+final case class Cat (override val name : String, override val age : Int) extends Pet with Meow {
 
-  override def toString = s"The Cats name $name and goes $talk"
+  override def toString = s"The Cats name is $name. $name is $age years old and goes $talk"
+
+}
+
+final case class Mouse (override val name : String, override val age : Int) extends Pet with Squeak {
+
+  override def toString = s"The Mouses name is $name. $name is $age years old and goes $talk"
 
 }
